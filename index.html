@@ -205,17 +205,17 @@
             <div id="fig3" class="grid md:grid-cols-12 gap-8 items-center scroll-mt-10" data-aos="fade-up">
                 <div class="order-2 md:order-1 md:col-span-7">
                     <div class="bg-white p-2 rounded-2xl shadow-md border border-slate-200/80 overflow-hidden group">
-                        <img src="p_histogram.png" alt="差值正态性验证" class="w-full h-auto rounded-xl group-hover:scale-[1.02] transition-transform duration-500">
+                        <img src="p_histogram.png" alt="差值分布与显著性验证" class="w-full h-auto rounded-xl group-hover:scale-[1.02] transition-transform duration-500">
                     </div>
                     <p class="text-center text-xs text-slate-400 mt-2">图表3</p>
                 </div>
                 <div class="order-1 md:order-2 md:col-span-5">
                     <h3 class="text-2xl font-bold mb-4">差值正态性验证</h3>
                     <p class="text-slate-600 leading-relaxed text-sm mb-4">
-                        <strong class="text-brand-dark">关键发现：</strong>差值（Week 2 — Week 1）的实际密度曲线（薄荷绿）与理论正态曲线（深红虚线）基本重合。Shapiro-Wilk 正态性检验 p = 0.485（> 0.05）。
+                        <strong class="text-brand-dark">关键发现：</strong>39 名参与者的差值均值为0.319分，差值直方图显示分布高度集中于零基准线右侧，且实际密度曲线（薄荷绿）与理论正态曲线（深红虚线）高度重合，Shapiro-Wilk 检验结果显示 p = 0.1678。
                     </p>
                     <p class="text-slate-600 leading-relaxed text-sm">
-                        <strong class="text-brand-dark">解读：</strong>实际分布与理论正态曲线之间无显著偏离，满足配对样本 t-test 对差值正态性的前提假设。该验证为前文报告的整体及个体差异分析提供了方法学层面的支持。
+                        <strong class="text-brand-dark">解读：</strong>差值数据满足正态分布假设，确保配对 t 检验的结果具备统计学效度。整体差值均值显著高于零基准线，进一步从群体分布层面验证了 Week 2 较 Week 1 参与度的显著正向提升。
                     </p>
                 </div>
             </div>
