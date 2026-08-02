@@ -163,19 +163,21 @@
         <!-- 可视化图表 -->
         <section class="space-y-24 mb-24">
             
-           <!-- 图表 1 -->
+          <!-- 图表 1 -->
             <div id="fig1" class="grid md:grid-cols-12 gap-8 items-center scroll-mt-10" data-aos="fade-up">
-                <div class="order-2 md:order-1 md:col-span-7 bg-white p-2 rounded-2xl shadow-sm border border-slate-100 overflow-hidden group">
-                    <img src="p_col.png" alt="整体参与度对比" class="w-full h-auto rounded-xl group-hover:scale-[1.02] transition-transform duration-500">
+                <div class="order-2 md:order-1 md:col-span-7">
+                    <div class="bg-white p-2 rounded-2xl shadow-md border border-slate-200/80 overflow-hidden group">
+                        <img src="p_col.png" alt="整体参与度对比" class="w-full h-auto rounded-xl group-hover:scale-[1.02] transition-transform duration-500">
+                    </div>
                     <p class="text-center text-xs text-slate-400 mt-2">图表1</p>
                 </div>
                 <div class="order-1 md:order-2 md:col-span-5">
                     <h3 class="text-2xl font-bold mb-4">整体参与度对比</h3>
-                    <p class="text-slate-600 leading-relaxed mb-4">
-                        <strong class="text-brand-dark">关键发现：</strong>参与者在 Week 2 的整体参与度均值（M = 3.66, SD = 0.41）显著高于 Week 1（M = 3.34, SD = 0.40），平均提升 0.32 分（+9.6%）。
+                    <p class="text-slate-600 leading-relaxed text-sm mb-4">
+                        <strong class="text-brand-dark">关键发现：</strong>整体参与度均值从 Week 1 的 3.34 分提升至 Week 2 的 3.66 分，平均提升 0.32 分（+9.6%）。配对样本 t 检验结果显示差异极显著（t(38) = 25.49, p < 0.001）。
                     </p>
                     <p class="text-slate-600 leading-relaxed text-sm">
-                        <strong class="text-brand-dark">解读：</strong>误差线较短，表明参与者评分波动较小，群体层面的提升趋势稳定。该结果确认了整体参与度的正向变化，为后续分析“该变化是否普遍存在于个体层面”提供了量化起点。
+                        <strong class="text-brand-dark">解读：</strong>误差线较短且 p 值极小，充分表明该活动项目在宏观层面带来了极其稳定且显著的正向效果，证实了整体干预方案的有效性。
                     </p>
                 </div>
             </div>
@@ -184,28 +186,32 @@
             <div id="fig2" class="grid md:grid-cols-12 gap-8 items-center scroll-mt-10" data-aos="fade-up">
                 <div class="md:col-span-5">
                     <h3 class="text-2xl font-bold mb-4">个体参与度变化轨迹</h3>
-                    <p class="text-slate-600 leading-relaxed mb-4">
+                    <p class="text-slate-600 leading-relaxed text-sm mb-4">
                         <strong class="text-brand-dark">关键发现：</strong>将 39 名参与者从 Week 1 到 Week 2 的变化路径可视化后可见，绝大多数个体轨迹呈上升趋势（图中橙线代表整体均值），个体提升量的差值标准差 SD = 0.08。
                     </p>
                     <p class="text-slate-600 leading-relaxed text-sm">
                         <strong class="text-brand-dark">解读：</strong>极低的差值标准差说明，参与者的提升幅度高度集中在均值附近，个体间差异极小。该结果与整体层面的显著提升相互印证，表明 Week 2 参与度的正向变化并非由少数极端值驱动，而是在个体层面具有高度一致性。
                     </p>
                 </div>
-                <div class="md:col-span-7 bg-white p-2 rounded-2xl shadow-sm border border-slate-100 overflow-hidden group">
-                    <img src="p_individual.png" alt="个体参与度变化轨迹" class="w-full h-auto rounded-xl group-hover:scale-[1.02] transition-transform duration-500">
+                <div class="md:col-span-7">
+                    <div class="bg-white p-2 rounded-2xl shadow-md border border-slate-200/80 overflow-hidden group">
+                        <img src="p_individual.png" alt="个体参与度变化轨迹" class="w-full h-auto rounded-xl group-hover:scale-[1.02] transition-transform duration-500">
+                    </div>
                     <p class="text-center text-xs text-slate-400 mt-2">图表2</p>
                 </div>
             </div>
 
             <!-- 图表 3 -->
             <div id="fig3" class="grid md:grid-cols-12 gap-8 items-center scroll-mt-10" data-aos="fade-up">
-                <div class="order-2 md:order-1 md:col-span-7 bg-white p-2 rounded-2xl shadow-sm border border-slate-100 overflow-hidden group">
-                    <img src="p_histogram.png" alt="差值正态性验证" class="w-full h-auto rounded-xl group-hover:scale-[1.02] transition-transform duration-500">
+                <div class="order-2 md:order-1 md:col-span-7">
+                    <div class="overflow-hidden group">
+                        <img src="p_histogram.png" alt="差值正态性验证" class="w-full h-auto group-hover:scale-[1.02] transition-transform duration-500">
+                    </div>
                     <p class="text-center text-xs text-slate-400 mt-2">图表3</p>
                 </div>
                 <div class="order-1 md:order-2 md:col-span-5">
                     <h3 class="text-2xl font-bold mb-4">差值正态性验证</h3>
-                    <p class="text-slate-600 leading-relaxed mb-4">
+                    <p class="text-slate-600 leading-relaxed text-sm mb-4">
                         <strong class="text-brand-dark">关键发现：</strong>差值（Week 2 — Week 1）的实际密度曲线（薄荷绿）与理论正态曲线（深红虚线）基本重合。Shapiro-Wilk 正态性检验 p = 0.485（> 0.05）。
                     </p>
                     <p class="text-slate-600 leading-relaxed text-sm">
@@ -214,31 +220,28 @@
                 </div>
             </div>
 
-            <!-- 分析全景叙事 (Dashboard) -->
-            <div id="fig4" class="grid md:grid-cols-12 gap-8 items-center scroll-mt-10" data-aos="fade-up">
-                <div class="md:col-span-7 bg-white p-3 rounded-2xl shadow-md border border-slate-200/80 overflow-hidden group">
-                    <img src="p_final.png" alt="分析全景叙事 (Dashboard)" class="w-full h-auto rounded-xl group-hover:scale-[1.01] transition-transform duration-500">
-                    <p class="text-center text-xs text-slate-400 mt-2">图表4</p>
-                </div>
-                <div class="md:col-span-5">
-                    <h3 class="text-2xl font-bold mb-4">分析全景叙事 (Dashboard)</h3>
-                    <p class="text-slate-600 leading-relaxed mb-4 text-sm">
-                        该面板将整体趋势（左上）、个体变化模式（左下）与统计诊断（右下）整合于同一版面，形成完整的定量分析证据链：
-                    </p>
-                    <ul class="text-slate-600 leading-relaxed text-sm space-y-2 mb-4">
-                        <li><strong class="text-brand-dark">· 左上：</strong>确认群体层面的均值提升，量化了 Week 2 较 Week 1 的变化幅度与统计显著性；</li>
-                        <li><strong class="text-brand-dark">· 左下：</strong>进一步验证该提升在个体层面的普遍性，排除少数极端值驱动的可能性；</li>
-                        <li><strong class="text-brand-dark">· 右下：</strong>提供方法学层面的支持，确认差值分布满足 t-test 正态性假设，保障前序结论的统计可靠性。</li>
-                    </ul>
-                    <p class="text-slate-600 leading-relaxed text-sm">
-                        三者相互印证，共同回应了项目初始的研究目标：Week 2 参与度的提升在群体层面显著、个体层面一致，且统计结论可靠，为后续定性研究与体验优化提供了明确的数据依据。
-                    </p>
+            <!-- 图表 4 全景 -->
+            <div id="fig4" class="scroll-mt-10 pt-10" data-aos="fade-up">
+                <h3 class="text-2xl font-bold mb-4 text-center">分析全景叙事 (Dashboard)</h3>
+                <p class="text-slate-600 leading-relaxed text-center max-w-3xl mx-auto mb-2 text-sm">
+                    该面板将整体趋势（左上）、个体变化模式（左下）与统计诊断（右下）整合于同一版面，形成完整的定量分析证据链：
+                </p>
+                <p class="text-slate-600 leading-relaxed text-center max-w-3xl mx-auto mb-2 text-sm">
+                    · <strong>左上：</strong>确认群体层面的均值提升，量化了 Week 2 较 Week 1 的变化幅度与统计显著性；<br>
+                    · <strong>左下：</strong>进一步验证该提升在个体层面的普遍性，排除少数极端值驱动的可能性；<br>
+                    · <strong>右下：</strong>提供方法学层面的支持，确认差值分布满足 t-test 正态性假设，保障前序结论的统计可靠性。
+                </p>
+                <p class="text-slate-600 leading-relaxed text-center max-w-3xl mx-auto mb-8 text-sm">
+                    三者相互印证，共同回应了项目初始的研究目标：Week 2 参与度的提升在群体层面显著、个体层面一致，且统计结论可靠，为后续定性研究与体验优化提供了明确的数据依据。
+                </p>
+                <div class="bg-white p-2 rounded-2xl shadow-md border border-slate-200/80 overflow-hidden group">
+                    <img src="p_final.png" alt="分析全景叙事" class="w-full h-auto rounded-xl group-hover:scale-[1.01] transition-transform duration-700">
                 </div>
             </div>
 
         </section>
 
-       <!-- 研究启示与后续建议 -->
+      <!-- 研究启示与后续建议 -->
         <section data-aos="fade-up" class="mb-20">
             <div class="bg-gradient-to-br from-brand-dark to-slate-800 p-8 md:p-10 rounded-3xl shadow-xl text-white relative overflow-hidden">
                 <!-- 装饰背景 -->
