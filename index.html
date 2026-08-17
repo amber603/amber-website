@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="zh-CN" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>王春 (Chun Wang) | 用户研究与数据分析作品集</title>
-    <!-- 引入 Tailwind CSS (样式) -->
+    <title>Chun Wang | User Research & Data Analysis Portfolio</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 引入 AOS CSS (动效) -->
+    <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- 引入 Highlight.js (R语言代码高亮) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/r.min.js"></script>
-    <!-- 引入 Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -25,10 +25,11 @@
                     },
                     colors: {
                         brand: {
-                            green: '#82CAAC', // 薄荷绿
-                            orange: '#F89D7E', // 珊瑚橘
-                            dark: '#1E293B', // 深石板灰
-                            bg: '#F8FAFC' // 珍珠白
+                            dark: '#09090B',    
+                            accent: '#52525B',  
+                            muted: '#F4F4F5',   
+                            border: '#E4E4E7',  
+                            bg: '#FFFFFF'       
                         }
                     }
                 }
@@ -36,301 +37,303 @@
         }
     </script>
     <style>
-        body { background-color: #F8FAFC; color: #1E293B; }
-        .glass-card { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
-        /* 覆盖代码块的默认边距 */
+        body { background-color: #FFFFFF; color: #09090B; }
+        .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); }
         pre { margin: 0 !important; }
-        .hljs { border-radius: 0.75rem; padding: 1.5rem; font-size: 0.875rem; line-height: 1.6; }
-        /* 隐藏 summary 默认的三角形标志，使用自定义 svg */
+        .hljs { background: transparent !important; padding: 1.5rem; font-size: 0.85rem; line-height: 1.7; font-weight: 300; }
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
+        
+        /* 关键词加粗样式，使用深灰色区分于极黑色的标题 */
+        .kw-highlight { font-weight: 600; color: #3F3F46; } 
     </style>
 </head>
-<body class="antialiased selection:bg-brand-green selection:text-white">
+<body class="antialiased selection:bg-brand-dark selection:text-white">
 
-    <!-- Hero Section (与正文连在一起的紧凑型介绍) -->
-    <header class="pt-24 pb-16 flex flex-col justify-center items-center text-center px-6 relative" data-aos="fade-up" data-aos-duration="1000">
+    <!-- Hero Section -->
+    <header class="pt-32 pb-20 flex flex-col justify-center items-center text-center px-6 relative" data-aos="fade-up" data-aos-duration="1000">
         <div class="max-w-3xl mx-auto">
-            <!-- 学历标签 -->
-            <div class="inline-flex items-center gap-2 bg-brand-green/10 text-emerald-700 px-5 py-2 rounded-full text-sm font-semibold mb-6">
-                🎓 多伦多大学 硕士 | 发展心理学与教育
+            <!-- Education Tag -->
+            <div class="inline-flex items-center gap-2 bg-brand-muted text-brand-accent px-4 py-1.5 rounded-full text-xs font-medium tracking-wide mb-8 border border-brand-border uppercase">
+                University of Toronto | MA in Developmental Psychology and Education
             </div>
             
-            <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-brand-dark mb-4">王春 (Chun Wang)</h1>
-            <!-- 简短介绍 -->
-            <h2 class="text-xl md:text-2xl text-brand-orange font-semibold mb-6">用户研究方向 | 定量数据建模与用户洞察</h2>
+            <h1 class="text-4xl md:text-5xl font-light tracking-[0.2em] text-brand-dark uppercase mb-6">Chun Wang</h1>
+            <!-- Subtitle -->
+            <h2 class="text-sm md:text-base text-brand-accent font-medium tracking-widest uppercase mb-10">User Research · Quantitative Data Modeling · User Insights</h2>
             
-            <!-- 个人介绍段落 -->
-            <p class="text-lg text-slate-600 leading-relaxed mb-10 text-left md:text-center">
-                心理学与社会科学双背景，专注于通过定性深度访谈与定量数据建模（R / SPSS / Excel）搭建完整的用户洞察链条。擅长将复杂的数据分析转化为可落地的产品与业务策略。
+            <!-- Bio Summary -->
+            <p class="text-base md:text-lg text-brand-accent font-light leading-relaxed mb-12 text-left md:text-center max-w-2xl mx-auto">
+                Dual background in <strong class="kw-highlight">Psychology</strong> and <strong class="kw-highlight">Social Sciences</strong>. Specialized in building end-to-end <strong class="kw-highlight">user insight pipelines</strong> through qualitative in-depth interviews and <strong class="kw-highlight">quantitative data modeling</strong> (R / SPSS / Excel). Adept at translating complex data analysis into actionable <strong class="kw-highlight">product and business strategies</strong>.
             </p>
 
-            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-10">
-                <a href="#portfolio" class="px-8 py-3 bg-brand-dark text-white font-medium rounded-lg hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                    👇 查看 RStudio 数据分析作品
+            <div class="flex flex-col sm:flex-row justify-center gap-5 mb-14">
+                <a href="#portfolio" class="px-8 py-3.5 bg-brand-dark text-white text-sm font-medium tracking-wide rounded-none hover:bg-zinc-800 transition-all">
+                    View RStudio Portfolio
                 </a>
-                <a href="./个人简历.pdf" target="_blank" class="px-8 py-3 bg-white text-brand-dark border border-slate-200 font-medium rounded-lg hover:bg-slate-50 transition-all shadow-sm">
-                    📄 浏览 / 下载完整简历
+                <a href="./Resume.pdf" target="_blank" class="px-8 py-3.5 bg-white text-brand-dark text-sm border border-brand-border font-medium tracking-wide rounded-none hover:bg-brand-muted transition-all">
+                    View Full Resume
                 </a>
             </div>
 
-            <!-- 联系信息与坐标 -->
-            <div class="flex flex-wrap justify-center gap-6 text-sm text-slate-500 font-medium">
-                <span class="flex items-center gap-2"><span class="text-lg">📍</span> 浙江杭州</span>
-                <span class="flex items-center gap-2"><span class="text-lg">📱</span> 13828677328</span>
-                <span class="flex items-center gap-2"><span class="text-lg">📧</span> amberw603@163.com</span>
+            <!-- Contact Info -->
+            <div class="flex flex-wrap justify-center gap-8 text-xs text-brand-accent font-medium tracking-wider uppercase">
+                <span>Toronto, Canada</span>
+                <span>+1 437 362 4998</span>
+                <span>amberw603@163.com</span>
             </div>
         </div>
     </header>
 
-    <!-- 作品集主体 -->
+    <!-- Main Portfolio -->
     <main id="portfolio" class="max-w-5xl mx-auto px-6 py-10">
         
-        <!-- 数据说明卡片 -->
-        <div class="glass-card p-6 md:p-8 rounded-2xl border border-amber-100 shadow-sm mb-16 border-l-4 border-l-amber-400" data-aos="fade-up">
-            <h3 class="text-lg font-bold text-amber-800 mb-2 flex items-center gap-2">⚠️ 数据说明</h3>
-            <p class="text-amber-700/80 leading-relaxed text-sm">
-                本项目基于真实的工作/项目经历进行情境构建，所有数据均为模拟生成，旨在展示从数据清洗、统计建模到可视化洞察的完整定量分析流程。
+        <!-- Data Disclaimer Card -->
+        <div class="p-6 md:p-8 border border-brand-border bg-brand-muted/50 mb-20" data-aos="fade-up">
+            <h3 class="text-xs font-semibold text-brand-accent mb-3 tracking-widest uppercase">Data Disclaimer</h3>
+            <p class="text-brand-accent font-light leading-relaxed text-sm">
+                This project is based on real-world scenarios. All data is <strong class="kw-highlight">simulated</strong> to demonstrate a complete <strong class="kw-highlight">quantitative analysis workflow</strong>—from data cleaning and statistical modeling to generating visual insights.
             </p>
         </div>
 
-        <!-- 项目背景 -->
-        <section class="mb-20" data-aos="fade-up">
-            <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
-                <span class="w-8 h-8 rounded-lg bg-brand-green flex items-center justify-center text-white text-lg">📊</span>
-                案例研究：青少年营地活动参与度分析
-            </h2>
-           <div class="grid md:grid-cols-2 gap-8 bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+        <!-- Project Background -->
+        <section class="mb-24" data-aos="fade-up">
+            <div class="border-b border-brand-dark pb-4 mb-10">
+                <h2 class="text-2xl font-light tracking-wide text-brand-dark">
+                    Case Study: Youth Camp Engagement Analysis
+                </h2>
+            </div>
+            
+           <div class="grid md:grid-cols-2 gap-12">
                 <div>
-                    <h4 class="font-semibold text-brand-dark mb-3">项目背景</h4>
-                    <p class="text-slate-600 leading-relaxed text-sm mb-3">本案例模拟了一项为期两周的青少年营地活动项目。39 名参与者（14-18 岁，不同性别与国籍）在 Week 1 和 Week 2 结束时，分别对 6 项核心活动进行参与度评分（1-5 分制）。</p>
-                    <p class="text-slate-600 leading-relaxed text-sm">Week 1 结束后，项目组基于参与度反馈对活动执行进行了多项微调（如增加电影之夜投票选项等）。本分析聚焦于 Week 1 与 Week 2 的量化对比，旨在评估参与度的整体变化趋势，不涉及具体调整策略的有效性归因。</p>
+                    <h4 class="text-xs font-semibold text-brand-accent mb-4 tracking-widest uppercase">Project Background</h4>
+                    <p class="text-brand-accent font-light leading-relaxed text-sm mb-4">This case simulates a two-week youth camp. <strong class="kw-highlight">39 participants</strong> (ages 14-18, diverse demographics) rated their <strong class="kw-highlight">engagement (1-5 scale)</strong> across 6 core activities at the end of Week 1 and Week 2.</p>
+                    <p class="text-brand-accent font-light leading-relaxed text-sm">After Week 1, the team made <strong class="kw-highlight">micro-adjustments</strong> to activities based on initial feedback. This analysis focuses on the <strong class="kw-highlight">quantitative comparison</strong> between the two weeks to evaluate <strong class="kw-highlight">overall engagement trends</strong>, independent of specific causal factors.</p>
                 </div>
                 <div>
-                    <h4 class="font-semibold text-brand-dark mb-3">分析目标</h4>
-                    <ul class="text-slate-600 leading-relaxed text-sm space-y-3">
-                        <li class="grid grid-cols-[auto_1fr] gap-x-2">
-                            <span class="text-slate-400 select-none">•</span>
-                            <span><strong class="text-brand-dark font-semibold">整体趋势：</strong>Week 2 的参与度相较于 Week 1 是否有显著提升？提升幅度如何？</span>
+                    <h4 class="text-xs font-semibold text-brand-accent mb-4 tracking-widest uppercase">Analysis Objectives</h4>
+                    <ul class="text-brand-accent font-light leading-relaxed text-sm space-y-4">
+                        <li class="grid grid-cols-[auto_1fr] gap-x-3">
+                            <span class="text-brand-border">—</span>
+                            <span><strong class="text-brand-dark font-medium">Overall Trend:</strong> Did engagement <strong class="kw-highlight">significantly improve</strong> in Week 2, and by what magnitude?</span>
                         </li>
-                        <li class="grid grid-cols-[auto_1fr] gap-x-2">
-                            <span class="text-slate-400 select-none">•</span>
-                            <span><strong class="text-brand-dark font-semibold">个体一致性：</strong>这种提升是集中于少数参与者，还是普遍存在于大多数个体中？</span>
+                        <li class="grid grid-cols-[auto_1fr] gap-x-3">
+                            <span class="text-brand-border">—</span>
+                            <span><strong class="text-brand-dark font-medium">Individual Consistency:</strong> Was the improvement driven by a few outliers, or a <strong class="kw-highlight">widespread trend</strong> across most participants?</span>
                         </li>
-                        <li class="grid grid-cols-[auto_1fr] gap-x-2">
-                            <span class="text-slate-400 select-none">•</span>
-                            <span><strong class="text-brand-dark font-semibold">统计可靠性：</strong>数据是否满足配对样本 t-test 的前提假设？结论是否经得起检验？</span>
+                        <li class="grid grid-cols-[auto_1fr] gap-x-3">
+                            <span class="text-brand-border">—</span>
+                            <span><strong class="text-brand-dark font-medium">Statistical Reliability:</strong> Does the data meet the assumptions for a paired-samples t-test, ensuring <strong class="kw-highlight">robust conclusions</strong>?</span>
                         </li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- 统计验证 -->
-        <section class="mb-20" data-aos="fade-up">
-            <div class="mb-8">
-                <h3 class="text-2xl font-bold text-brand-dark mb-2">🔬 统计验证与前提检验</h3>
-                <p class="text-slate-500">在进行深入的可视化分析前，本研究首先对数据进行了正态性与显著性检验，以确保业务结论具有坚实的统计学支撑。</p>
+        <!-- Statistical Validation -->
+        <section class="mb-24" data-aos="fade-up">
+            <div class="mb-10">
+                <h3 class="text-lg font-medium text-brand-dark mb-3">Statistical Validation & Assumption Testing</h3>
+                <p class="text-brand-accent font-light text-sm max-w-3xl">Before proceeding with visual analysis, <strong class="kw-highlight">normality and significance tests</strong> were conducted to ensure all business conclusions are backed by <strong class="kw-highlight">solid statistical evidence</strong>.</p>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- 正态性检验 -->
-                <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-                    <h4 class="font-semibold text-lg text-brand-dark mb-3 flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-brand-orange"></span> 正态性检验 (Shapiro-Wilk)
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Normality Test -->
+                <div class="p-8 border border-brand-border">
+                    <h4 class="font-medium text-brand-dark mb-3">
+                        Normality Test (Shapiro-Wilk)
                     </h4>
-                    <p class="text-sm text-slate-600 mb-4">为了验证参数检验的前提假设，研究对每位参与者的差值分数进行了分布检验。</p>
-                    <div class="bg-slate-50 p-3 rounded-lg text-sm">
-                        <span class="block text-slate-500 mb-1">结果：p = 0.168 (> 0.05)</span>
-                        <strong class="text-brand-green">结论：差值数据符合正态分布，配对 T 检验合理。</strong>
+                    <p class="text-sm font-light text-brand-accent mb-6">A distribution test was conducted on individual difference scores to verify parametric testing assumptions.</p>
+                    <div class="border-l-2 border-brand-dark pl-4 text-sm">
+                        <span class="block text-brand-accent font-light mb-1">Result: <strong class="kw-highlight">p = 0.168 (&gt; 0.05)</strong></span>
+                        <span class="text-brand-dark font-medium">The difference data follows a <strong class="kw-highlight">normal distribution</strong>, confirming a paired t-test is appropriate.</span>
                     </div>
                 </div>
                 
-                <!-- T检验 -->
-                <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-                    <h4 class="font-semibold text-lg text-brand-dark mb-3 flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-brand-green"></span> 配对样本 T 检验
+                <!-- T-Test -->
+                <div class="p-8 border border-brand-border">
+                    <h4 class="font-medium text-brand-dark mb-3">
+                        Paired-Samples T-Test
                     </h4>
-                    <p class="text-sm text-slate-600 mb-4">对比全体参与者在 Week 1 与 Week 2 的整体均值差异，排除了随机误差的可能。</p>
-                    <div class="bg-slate-50 p-3 rounded-lg text-sm">
-                        <span class="block text-slate-500 mb-1">结果：t(38) = 25.49, p < 0.001</span>
-                        <strong class="text-brand-green">结论：两周间的参与度评分提升极显著。</strong>
+                    <p class="text-sm font-light text-brand-accent mb-6">Analyzed the overall mean difference between Week 1 and Week 2 to rule out random error.</p>
+                    <div class="border-l-2 border-brand-dark pl-4 text-sm">
+                        <span class="block text-brand-accent font-light mb-1">Result: <strong class="kw-highlight">t(38) = 25.49, p &lt; 0.001</strong></span>
+                        <span class="text-brand-dark font-medium">The increase in engagement scores is <strong class="kw-highlight">highly significant</strong>.</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 可视化图表 -->
-        <section class="space-y-24 mb-24">
+        <!-- Visualizations -->
+        <section class="space-y-32 mb-32">
             
-          <!-- 图表 1 -->
-            <div id="fig1" class="grid md:grid-cols-12 gap-8 items-center scroll-mt-10" data-aos="fade-up">
+          <!-- Figure 1 -->
+            <div id="fig1" class="grid md:grid-cols-12 gap-12 items-center scroll-mt-20" data-aos="fade-up">
                 <div class="order-2 md:order-1 md:col-span-7">
-                    <div class="bg-white p-2 rounded-2xl shadow-md border border-slate-200/80 overflow-hidden group">
-                        <img src="p_col.png" alt="整体参与度对比" class="w-full h-auto rounded-xl group-hover:scale-[1.02] transition-transform duration-500">
+                    <div class="border border-brand-border p-1">
+                        <img src="p_col.png" alt="Overall Engagement Comparison" class="w-full h-auto opacity-95 hover:opacity-100 transition-opacity">
                     </div>
-                    <p class="text-center text-xs text-slate-400 mt-2">图表1</p>
+                    <p class="text-left text-xs font-mono text-brand-accent mt-3">FIG 01. Overall Engagement Comparison</p>
                 </div>
                 <div class="order-1 md:order-2 md:col-span-5">
-                    <h3 class="text-2xl font-bold mb-4">整体参与度对比</h3>
-                    <p class="text-slate-600 leading-relaxed text-sm mb-4">
-                        <strong class="text-brand-dark">关键发现：</strong>参与者在 Week 2 的整体参与度均值（M = 3.66, SD = 0.41）显著高于 Week 1（M = 3.34, SD = 0.40），平均提升 0.32 分（+9.6%）。
+                    <h3 class="text-xl font-medium mb-5">Overall Engagement Comparison</h3>
+                    <p class="text-brand-accent font-light leading-relaxed text-sm mb-5">
+                        <strong class="text-brand-dark font-medium">Key Finding:</strong> Average engagement in Week 2 (M = 3.66, SD = 0.41) was <strong class="kw-highlight">significantly higher</strong> than Week 1 (M = 3.34, SD = 0.40), marking an average increase of <strong class="kw-highlight">0.32 points (+9.6%)</strong>.
                     </p>
-                    <p class="text-slate-600 leading-relaxed text-sm">
-                        <strong class="text-brand-dark">解读：</strong>误差线较短，表明参与者评分波动较小，群体层面的提升趋势稳定。该结果确认了整体参与度的正向变化，为后续分析“该变化是否普遍存在于个体层面”提供了量化起点。
+                    <p class="text-brand-accent font-light leading-relaxed text-sm">
+                        <strong class="text-brand-dark font-medium">Interpretation:</strong> Short error bars indicate <strong class="kw-highlight">low score fluctuation</strong>, demonstrating a <strong class="kw-highlight">stable upward trend</strong> across the group. This establishes a clear quantitative baseline for further analysis.
                     </p>
                 </div>
             </div>
 
-            <!-- 图表 2 -->
-            <div id="fig2" class="grid md:grid-cols-12 gap-8 items-center scroll-mt-10" data-aos="fade-up">
+            <!-- Figure 2 -->
+            <div id="fig2" class="grid md:grid-cols-12 gap-12 items-center scroll-mt-20" data-aos="fade-up">
                 <div class="md:col-span-5">
-                    <h3 class="text-2xl font-bold mb-4">个体参与度变化轨迹</h3>
-                    <p class="text-slate-600 leading-relaxed text-sm mb-4">
-                        <strong class="text-brand-dark">关键发现：</strong>个体轨迹可视化显示，39 名参与者中绝大多数个体折线呈明显上升趋势（图中橙线代表整体均值），个体提升量的差值标准差 SD = 0.08。
+                    <h3 class="text-xl font-medium mb-5">Individual Engagement Trajectories</h3>
+                    <p class="text-brand-accent font-light leading-relaxed text-sm mb-5">
+                        <strong class="text-brand-dark font-medium">Key Finding:</strong> Individual trajectories display a <strong class="kw-highlight">clear upward trend</strong> for nearly all 39 participants, alongside a very low standard deviation for difference scores (<strong class="kw-highlight">SD = 0.08</strong>).
                     </p>
-                    <p class="text-slate-600 leading-relaxed text-sm">
-                        <strong class="text-brand-dark">解读：</strong>极低的差值标准差说明，参与者的提升幅度高度集中在均值附近，个体间差异极小。该结果与整体层面的显著提升相互印证，表明 Week 2 参与度的正向变化并非由少数极端值驱动，而是在个体层面具有高度一致性。
+                    <p class="text-brand-accent font-light leading-relaxed text-sm">
+                        <strong class="text-brand-dark font-medium">Interpretation:</strong> The minimal variance indicates that the magnitude of improvement is <strong class="kw-highlight">highly concentrated around the mean</strong>. This cross-validates the group-level improvements.
                     </p>
                 </div>
                 <div class="md:col-span-7">
-                    <div class="bg-white p-2 rounded-2xl shadow-md border border-slate-200/80 overflow-hidden group">
-                        <img src="p_individual.png" alt="个体参与度变化轨迹" class="w-full h-auto rounded-xl group-hover:scale-[1.02] transition-transform duration-500">
+                    <div class="border border-brand-border p-1">
+                        <img src="p_individual.png" alt="Individual Engagement Trajectories" class="w-full h-auto opacity-95 hover:opacity-100 transition-opacity">
                     </div>
-                    <p class="text-center text-xs text-slate-400 mt-2">图表2</p>
+                    <p class="text-left text-xs font-mono text-brand-accent mt-3">FIG 02. Individual Engagement Trajectories</p>
                 </div>
             </div>
 
-            <!-- 图表 3 -->
-            <div id="fig3" class="grid md:grid-cols-12 gap-8 items-center scroll-mt-10" data-aos="fade-up">
+            <!-- Figure 3 -->
+            <div id="fig3" class="grid md:grid-cols-12 gap-12 items-center scroll-mt-20" data-aos="fade-up">
                 <div class="order-2 md:order-1 md:col-span-7">
-                    <div class="bg-white p-2 rounded-2xl shadow-md border border-slate-200/80 overflow-hidden group">
-                        <img src="p_histogram.png" alt="差值分布与显著性验证" class="w-full h-auto rounded-xl group-hover:scale-[1.02] transition-transform duration-500">
+                    <div class="border border-brand-border p-1">
+                        <img src="p_histogram.png" alt="Difference Distribution & Significance Validation" class="w-full h-auto opacity-95 hover:opacity-100 transition-opacity">
                     </div>
-                    <p class="text-center text-xs text-slate-400 mt-2">图表3</p>
+                    <p class="text-left text-xs font-mono text-brand-accent mt-3">FIG 03. Difference Distribution & Significance</p>
                 </div>
                 <div class="order-1 md:order-2 md:col-span-5">
-                    <h3 class="text-2xl font-bold mb-4">差值分布与显著性验证</h3>
-                    <p class="text-slate-600 leading-relaxed text-sm mb-4">
-                        <strong class="text-brand-dark">关键发现：</strong>39 名参与者的差值均值为0.319分，差值直方图显示分布高度集中于零基准线右侧，且实际密度曲线（薄荷绿）与理论正态曲线（深红虚线）高度重合，Shapiro-Wilk 检验结果显示 p = 0.1678。
+                    <h3 class="text-xl font-medium mb-5">Difference Distribution & Validation</h3>
+                    <p class="text-brand-accent font-light leading-relaxed text-sm mb-5">
+                        <strong class="text-brand-dark font-medium">Key Finding:</strong> The mean difference across participants is <strong class="kw-highlight">0.319 points</strong>. The difference histogram reveals a distribution <strong class="kw-highlight">highly concentrated to the right</strong> of the zero baseline.
                     </p>
-                    <p class="text-slate-600 leading-relaxed text-sm">
-                        <strong class="text-brand-dark">解读：</strong>差值数据满足正态分布假设，确保配对 t 检验的结果具备统计学效度。整体差值均值显著高于零基准线，进一步从群体分布层面验证了 Week 2 较 Week 1 参与度的显著正向提升。
+                    <p class="text-brand-accent font-light leading-relaxed text-sm">
+                        <strong class="text-brand-dark font-medium">Interpretation:</strong> This confirms the data meets the <strong class="kw-highlight">normal distribution assumption</strong>, validating the paired t-test results and proving the overall increase is statistically sound.
                     </p>
                 </div>
             </div>
 
-            <!-- 图表 4 全景 -->
-            <div id="fig4" class="scroll-mt-10 pt-10" data-aos="fade-up">
-                <h3 class="text-2xl font-bold mb-4 text-center">分析全景叙事 (Dashboard)</h3>
-                <p class="text-slate-600 leading-relaxed text-center max-w-3xl mx-auto mb-8 text-sm">
-                    该面板将整体趋势（左上）、个体变化模式（左下）与统计诊断（右下）整合于同一版面，三者相互印证，共同回应了项目初始的研究目标：Week 2 参与度的提升在群体层面显著、个体层面一致，且统计结论可靠，为后续定性研究与体验优化提供了明确的数据依据。
+            <!-- Figure 4 Dashboard -->
+            <div id="fig4" class="scroll-mt-20 pt-10" data-aos="fade-up">
+                <h3 class="text-xl font-medium mb-4 text-center">Analytical Narrative Dashboard</h3>
+                <p class="text-brand-accent font-light leading-relaxed text-center max-w-3xl mx-auto mb-10 text-sm">
+                    This dashboard integrates <strong class="kw-highlight">overall trends, individual trajectories, and statistical diagnostics</strong> into a unified view. These components mutually corroborate each other, thoroughly addressing the core research objectives.
                 </p>
-                <div class="bg-white p-2 rounded-2xl shadow-md border border-slate-200/80 overflow-hidden group">
-                    <img src="p_final.png" alt="分析全景叙事" class="w-full h-auto rounded-xl group-hover:scale-[1.01] transition-transform duration-700">
+                <div class="border border-brand-border p-1">
+                    <img src="p_final.png" alt="Analytical Narrative Dashboard" class="w-full h-auto opacity-95 hover:opacity-100 transition-opacity">
                 </div>
             </div>
 
         </section>
 
-      <!-- 研究启示与后续建议 -->
-        <section data-aos="fade-up" class="mb-20">
-            <div class="bg-gradient-to-br from-brand-dark to-slate-800 p-8 md:p-10 rounded-3xl shadow-xl text-white relative overflow-hidden">
-                <!-- 装饰背景 -->
-                <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+      <!-- Insights and Next Steps -->
+        <section data-aos="fade-up" class="mb-24">
+            <div class="bg-brand-muted/50 border border-brand-border p-10 md:p-14 text-brand-dark">
                 
-                <h2 class="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-3">
-                    💡 研究启示与后续建议
+                <h2 class="text-2xl font-light tracking-wide mb-6">
+                    Research Insights & Next Steps
                 </h2>
                 
-                <p class="text-slate-200 leading-relaxed mb-8 text-lg">
-                    基于 Week 1 与 Week 2 的参与度对比分析，本研究确认了参与度在群体层面的显著提升及个体层面的高度一致性，为后续用户研究提供了以下方向：
+                <p class="text-brand-accent font-light leading-relaxed mb-10 text-sm max-w-3xl">
+                    This comparative analysis confirms a <strong class="kw-highlight">significant group-level improvement</strong> and <strong class="kw-highlight">high individual-level consistency</strong>. Based on these findings, we recommend the following next steps:
                 </p>
 
-                <div class="bg-white/15 backdrop-blur-md rounded-2xl p-6 border border-white/10">
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3">
-                            <span class="w-6 h-6 rounded-full bg-brand-orange/20 text-brand-orange flex items-center justify-center shrink-0 mt-0.5">1</span>
-                            <p class="text-slate-200"><strong class="text-white">定性归因研究：</strong>当前量化数据虽然能证明参与度提升，但无法解释“为何提升”。因此，建议在 Week 2 结束后对参与度提升幅度处于前 20% 与后 20% 的参与者分别进行半结构化访谈，挖掘驱动参与度变化的具体因素。</p>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="w-6 h-6 rounded-full bg-brand-orange/20 text-brand-orange flex items-center justify-center shrink-0 mt-0.5">2</span>
-                            <p class="text-slate-200"><strong class="text-white">活动类型量化拆解：</strong>本分析仅聚焦于整体参与度，并未对各活动类型做详细对比。因此，建议在后续研究中收集各活动的细项评分，识别高贡献度与低贡献度活动，建立“活动类型&参与度”影响矩阵。</p>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="w-6 h-6 rounded-full bg-brand-orange/20 text-brand-orange flex items-center justify-center shrink-0 mt-0.5">3</span>
-                            <p class="text-slate-200"><strong class="text-white">边缘参与者预警机制：</strong>个体轨迹图显示，极少数参与者在 Week 1 参与度低于 2.5 分，且在 Week 2 中提升幅度低于均值。建议在未来的迭代项目中，于 Week 1 结束后设立“边缘参与者预警名单”，通过简短的问卷或访谈提前识别风险对象，并及时进行体验感干预。</p>
-                        </li>
-                    </ul>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="border-t border-brand-border pt-6">
+                        <span class="block text-xs font-mono text-brand-accent mb-3">01</span>
+                        <h4 class="font-medium text-brand-dark text-sm mb-3">Qualitative Attribution</h4>
+                        <p class="text-brand-accent font-light text-sm leading-relaxed">Conduct <strong class="kw-highlight">semi-structured interviews</strong> with the top and bottom 20% of participants (based on improvement) to uncover specific causal factors.</p>
+                    </div>
+                    <div class="border-t border-brand-border pt-6">
+                        <span class="block text-xs font-mono text-brand-accent mb-3">02</span>
+                        <h4 class="font-medium text-brand-dark text-sm mb-3">Quantitative Breakdown</h4>
+                        <p class="text-brand-accent font-light text-sm leading-relaxed">Gather detailed ratings per activity to identify high- and low-contribution events, forming a comprehensive <strong class="kw-highlight">impact matrix</strong>.</p>
+                    </div>
+                    <div class="border-t border-brand-border pt-6">
+                        <span class="block text-xs font-mono text-brand-accent mb-3">03</span>
+                        <h4 class="font-medium text-brand-dark text-sm mb-3">Early Warning Mechanism</h4>
+                        <p class="text-brand-accent font-light text-sm leading-relaxed">Develop an <strong class="kw-highlight">At-Risk Warning List</strong> using pulse surveys after Week 1 to proactively identify disengaged users and implement <strong class="kw-highlight">timely interventions</strong>.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- 统一代码展示区 -->
+        <!-- Code Appendix -->
         <section data-aos="fade-up" class="mb-10">
-            <details class="group bg-[#1a1b26] rounded-3xl shadow-xl border border-slate-800 transition-all duration-300">
-                <summary class="flex justify-between items-center cursor-pointer px-8 py-5 bg-[#15161e] rounded-3xl group-open:rounded-b-none hover:bg-[#1c1d27] transition-colors">
-                    <div class="flex items-center gap-3">
-                        <span class="text-brand-green font-mono text-xl">{"}"}</span>
-                        <h2 class="text-lg font-bold text-slate-200">
-                            附录：统计检验与可视化核心代码 (RStudio)
-                            <span class="text-slate-400 text-sm font-normal ml-2 tracking-wide hidden sm:inline-block">- 点击展开</span>
+            <details class="group border border-brand-border bg-white transition-all duration-300">
+                <summary class="flex justify-between items-center cursor-pointer px-8 py-6 hover:bg-brand-muted transition-colors">
+                    <div class="flex items-center gap-4">
+                        <span class="text-brand-dark font-mono text-lg">{ }</span>
+                        <h2 class="text-sm font-medium tracking-wide text-brand-dark uppercase">
+                            Appendix: RStudio Code
+                            <span class="text-brand-accent text-xs font-light normal-case tracking-normal ml-3 hidden sm:inline-block">Click to expand source code</span>
                         </h2>
                     </div>
-                    <!-- 展开/收起 箭头动画图标 -->
-                    <span class="text-slate-400 transition-transform duration-300 group-open:rotate-180">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- Animated arrow -->
+                    <span class="text-brand-accent transition-transform duration-300 group-open:rotate-180">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                             <polyline points="6 9 12 15 18 9"></polyline>
                         </svg>
                     </span>
                 </summary>
                 
-                <div class="p-8 space-y-10 border-t border-slate-700/50">
+                <div class="p-8 space-y-12 border-t border-brand-border bg-zinc-950 text-zinc-300">
                     
-                    <!-- 基础配置与导入 -->
+                    <!-- Environment Setup -->
                     <div>
-                        <h3 class="text-brand-green text-sm font-bold mb-3 uppercase tracking-wider flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-brand-green"></span> 环境配置与导入
+                        <h3 class="text-xs font-mono text-zinc-500 mb-4 uppercase tracking-widest">
+                            // Environment Setup & Data Import
                         </h3>
                         <pre><code class="language-r">library(dplyr)
 library(tidyr)
 library(ggplot2)
 library(readxl)
 
-my_colors <- c("#66C2A5","#FC8D62")
+my_colors <- c("#475569","#0F172A") # Updated to monochrome
 
 df <- read_excel("participant_full_data.xlsx")
 df$Week <- factor(df$Week, level = c("Week 1", "Week 2"))</code></pre>
                     </div>
 
-                    <!-- 00 统计检验 -->
+                    <!-- 00 Statistical Testing -->
                     <div>
-                        <h3 class="text-brand-green text-sm font-bold mb-3 uppercase tracking-wider flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-brand-green"></span> 00 / 统计检验 (正态性 & 配对 T 检验)
+                        <h3 class="text-xs font-mono text-zinc-500 mb-4 uppercase tracking-widest">
+                            // 00 Statistical Testing
                         </h3>
-                        <pre><code class="language-r"># 转宽表计算差值
+                        <pre><code class="language-r"># Convert to wide format to calculate differences
 week_wide <- df %>%
   group_by(Participant_ID, Week) %>%
   summarise(Per_Average = mean(Engagement_Score), .groups = "drop") %>%
   pivot_wider(names_from = Week, values_from = Per_Average) %>%
   mutate(Difference = `Week 2` - `Week 1`)
 
-# 1. 差值正态性检验 (Shapiro-Wilk)
+# 1. Normality test of difference scores
 shapiro_result <- shapiro.test(week_wide$Difference)
 
-# 2. 参与度差异配对样本 t-test
+# 2. Paired-samples t-test
 t_result <- t.test(week_wide$`Week 2`, week_wide$`Week 1`, paired = TRUE)</code></pre>
                     </div>
 
-                    <!-- 01 整体参与度 -->
+                    <!-- 01 Overall Engagement -->
                     <div>
-                        <div class="flex justify-between items-center mb-3">
-                            <h3 class="text-brand-orange text-sm font-bold uppercase tracking-wider flex items-center gap-2 m-0">
-                                <span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span> 01 / 整体参与度对比 (图表 1)
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xs font-mono text-zinc-500 uppercase tracking-widest m-0">
+                                // 01 Overall Engagement Comparison
                             </h3>
-                            <a href="#fig1" class="text-xs text-brand-green hover:underline">👉 查看图表1效果</a>
+                            <a href="#fig1" class="text-xs font-mono text-brand-accent hover:text-white transition-colors">👉 View Fig 01</a>
                         </div>
-                        <pre><code class="language-r"># 数据清洗：计算个体平均值与周汇总数据
+                        <pre><code class="language-r"># Data cleaning: calculate individual averages and weekly summaries
 individual_data <- df %>%
   group_by(Participant_ID, Week) %>%
   summarise(Per_Average = mean(Engagement_Score), .groups = "drop")
@@ -345,17 +348,17 @@ week_sum <- individual_data %>%
   ) %>%
   mutate(SE = SD / sqrt(n))
 
-# 图表绘制
+# Plotting
 p_col <- ggplot(week_sum, aes(x = Week, y = Average, fill = Week)) +
   geom_col(width = 0.5, alpha = 0.8) +
   geom_errorbar(aes(ymin = Average - SE, ymax = Average + SE), width = 0.5, linewidth = 0.8) +
-  labs(title = "整体参与度: Week 1 vs Week 2",
-       x = "时间",
-       y = "平均参与度（1-5）",
-       subtitle = "误差线表示均值的标准误（SE）",
-       caption = paste0("平均提升：",
+  labs(title = "Overall Engagement: Week 1 vs Week 2",
+       x = "Time",
+       y = "Average Engagement (1-5)",
+       subtitle = "Error bars represent standard error (SE) of the mean",
+       caption = paste0("Average Increase: ",
                        round(week_sum$Average[2]-week_sum$Average[1],2),
-                       "分（",round((week_sum$Average[2]-week_sum$Average[1])/
+                       " points (",round((week_sum$Average[2]-week_sum$Average[1])/
                                    week_sum$Average[1]*100,1),"%)")) +
   scale_fill_manual(values = my_colors) +
   theme_minimal() +
@@ -365,15 +368,15 @@ p_col <- ggplot(week_sum, aes(x = Week, y = Average, fill = Week)) +
   ylim(0, 5)</code></pre>
                     </div>
 
-                    <!-- 02 个体参与度变化 -->
+                    <!-- 02 Individual Trajectories -->
                     <div>
-                        <div class="flex justify-between items-center mb-3">
-                            <h3 class="text-brand-orange text-sm font-bold uppercase tracking-wider flex items-center gap-2 m-0">
-                                <span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span> 02 / 个体参与度变化轨迹 (图表 2)
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xs font-mono text-zinc-500 uppercase tracking-widest m-0">
+                                // 02 Individual Trajectories
                             </h3>
-                            <a href="#fig2" class="text-xs text-brand-green hover:underline">👉 查看图表2效果</a>
+                            <a href="#fig2" class="text-xs font-mono text-brand-accent hover:text-white transition-colors">👉 View Fig 02</a>
                         </div>
-                        <pre><code class="language-r"># 图表绘制 (基于前置清洗生成的 individual_data)
+                        <pre><code class="language-r"># Plotting (based on individual_data)
 p_individual <- ggplot(individual_data, aes(x = Week, y = Per_Average,
                                       group = Participant_ID)) +
   geom_line(alpha = 0.6, linewidth = 0.8, color = "grey") +
@@ -382,26 +385,26 @@ p_individual <- ggplot(individual_data, aes(x = Week, y = Per_Average,
                color = my_colors[2], linewidth = 1.5) +
   stat_summary(aes(group = 1), fun = mean, geom = "point",
                color = my_colors[2], size = 3) +
-  labs(title = "个体参与度变化轨迹",
-       subtitle = paste0("红线为整体均值:",
+  labs(title = "Individual Engagement Trajectories",
+       subtitle = paste0("Red line is overall mean: ",
                         round(week_sum$Average[1],2),"→",
                         round(week_sum$Average[2],2)),
-       x = "时间", y = "平均参与度（1-5）") +
+       x = "Time", y = "Average Engagement (1-5)") +
   theme_minimal() +
   theme(plot.title = element_text(size=14,hjust=0.5),
         plot.subtitle = element_text(size=12,hjust = 0.5)) +
   ylim(1, 5)</code></pre>
                     </div>
 
-                    <!-- 03 差值分布 -->
+                    <!-- 03 Difference Distribution -->
                     <div>
-                        <div class="flex justify-between items-center mb-3">
-                            <h3 class="text-brand-orange text-sm font-bold uppercase tracking-wider flex items-center gap-2 m-0">
-                                <span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span> 03 / 差值分布直方图与密度线 (图表 3)
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xs font-mono text-zinc-500 uppercase tracking-widest m-0">
+                                // 03 Difference Distribution & Significance
                             </h3>
-                            <a href="#fig3" class="text-xs text-brand-green hover:underline">👉 查看图表3效果</a>
+                            <a href="#fig3" class="text-xs font-mono text-brand-accent hover:text-white transition-colors">👉 View Fig 03</a>
                         </div>
-                        <pre><code class="language-r"># 图表绘制 (基于前置清洗生成的 week_wide)
+                        <pre><code class="language-r"># Plotting (based on week_wide)
 p_histogram <- ggplot(week_wide, aes(x = Difference)) +
   geom_histogram(aes(y = after_stat(density)), bins = 10, fill = my_colors[2], alpha = 0.6,
                  color = "white") +
@@ -416,11 +419,11 @@ p_histogram <- ggplot(week_wide, aes(x = Difference)) +
              color = "red", linewidth = 0.8) +
   annotate("text", x = mean(week_wide$Difference) + 0.01, 
            y = max(density(week_wide$Difference)$y) * 0.7,
-           label = paste0("均值= ", round(mean(week_wide$Difference), 3)), 
+           label = paste0("Mean= ", round(mean(week_wide$Difference), 3)), 
            color = "red", hjust = 0, size = 3.8) +
-  labs(title = "差值分布：Week 2 - Week 1 ",
-       subtitle = "直方图与密度曲线（虚线为理论正态分布）",
-       x = "差值", y = "密度",
+  labs(title = "Difference Distribution: Week 2 - Week 1",
+       subtitle = "Histogram & Density Curve (Dashed line is theoretical normal)",
+       x = "Difference", y = "Density",
        caption = paste0("Shapiro-Wilk: p = ", round(shapiro_result$p.value, 4))) +
   theme_minimal() +
   theme(plot.title = element_text(size = 14, hjust = 0.5),
@@ -433,40 +436,40 @@ p_histogram <- ggplot(week_wide, aes(x = Difference)) +
 
     </main>
 
-    <!-- 页脚与联系方式 -->
-    <footer class="bg-white border-t border-slate-200 py-16 mt-10">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h3 class="text-xl md:text-2xl font-bold text-brand-dark mb-8">
-                感谢浏览。期待未来能用严谨的数据，讲好更有温度的产品故事。
+    <!-- Footer -->
+    <footer class="bg-white border-t border-brand-border py-20 mt-16">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h3 class="text-lg font-light text-brand-dark mb-10 tracking-wide">
+                Rigorous data. Compelling stories. Human-centric design.
             </h3>
             
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mb-12">
-                <a href="mailto:amberw603@163.com" class="flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-50 text-slate-700 hover:bg-slate-100 transition-colors font-medium">
-                    <span class="text-xl">✉️</span> amberw603@163.com
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mb-16">
+                <a href="mailto:amberw603@163.com" class="text-sm text-brand-accent hover:text-brand-dark transition-colors font-medium tracking-wide">
+                    amberw603@163.com
                 </a>
-                <a href="tel:13828677328" class="flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-50 text-slate-700 hover:bg-slate-100 transition-colors font-medium">
-                    <span class="text-xl">📞</span> 13828677328
+                <span class="hidden sm:inline-block text-brand-border">|</span>
+                <a href="tel:+86 13828677328" class="text-sm text-brand-accent hover:text-brand-dark transition-colors font-medium tracking-wide">
+                    +1 437 362 4998
                 </a>
-                <a href="个人简历.pdf" target="_blank" class="flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-dark text-white hover:bg-slate-800 transition-colors shadow-md font-medium">
-                    📄 下载完整 PDF 简历
+                <span class="hidden sm:inline-block text-brand-border">|</span>
+                <a href="Resume.pdf" target="_blank" class="text-sm text-brand-accent hover:text-brand-dark transition-colors font-medium tracking-wide underline underline-offset-4">
+                    Download Resume
                 </a>
             </div>
             
-            <p class="text-slate-400 text-sm">© 2026 Chun Wang. All rights reserved.</p>
+            <p class="text-brand-border font-mono text-xs">© 2026 Chun Wang.</p>
         </div>
     </footer>
 
-    <!-- JS 脚本初始化 -->
+    <!-- JS Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // 初始化 AOS 滚动动效
         AOS.init({
             once: true,
-            offset: 100,
-            easing: 'ease-out-cubic',
+            offset: 80,
+            easing: 'ease-out',
         });
 
-        // 初始化代码高亮
         document.addEventListener('DOMContentLoaded', (event) => {
             document.querySelectorAll('pre code').forEach((el) => {
                 hljs.highlightElement(el);
